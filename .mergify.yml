@@ -1,6 +1,8 @@
 queue_rules:
   - name: default
     merge_method: merge
+    merge_conditions:
+      - "-conflict"
 
 pull_request_rules:
   - name: queue PRs labeled poc
@@ -9,3 +11,10 @@ pull_request_rules:
     actions:
       queue:
         name: default
+
+merge_protections:
+  - name: require dependencies
+    if:
+      - label = poc
+    success_conditions:
+      - "depends-on=#1"
