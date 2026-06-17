@@ -1,0 +1,12 @@
+queue_rules:
+  - name: default
+    merge_conditions: []
+
+pull_request_rules:
+  - name: queue PRs labeled poc
+    conditions:
+      - label = poc
+    actions:
+      queue:
+        name: default
+        method: merge
