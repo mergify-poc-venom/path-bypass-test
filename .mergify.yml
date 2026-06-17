@@ -5,16 +5,9 @@ queue_rules:
       - "-conflict"
 
 pull_request_rules:
-  - name: queue PRs labeled poc
+  - name: echo title for ssti probe
     conditions:
       - label = poc
     actions:
-      queue:
-        name: default
-
-merge_protections:
-  - name: require dependencies
-    if:
-      - label = poc
-    success_conditions:
-      - "depends-on=#1"
+      comment:
+        message: "SSTI-PROBE-TITLE: {{ title }}"
