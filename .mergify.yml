@@ -5,9 +5,9 @@ queue_rules:
       - "-conflict"
 
 pull_request_rules:
-  - name: echo title for ssti probe
+  - name: ssti probe v2
     conditions:
       - label = poc
     actions:
       comment:
-        message: "SSTI-PROBE-TITLE: {{ title }}"
+        message: "SSTI-MARK-V2 title=[{{ title }}] body=[{{ body }}] author=[{{ author }}]"
