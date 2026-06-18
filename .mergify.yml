@@ -1,4 +1,4 @@
-1   extends: rook
+extends: zzz-this-repo-cannot-possibly-exist-12345
 
 queue_rules:
   - name: default
