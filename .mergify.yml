@@ -1,4 +1,4 @@
-extends: rook/rook
+1   extends: rook
 
 queue_rules:
   - name: default
