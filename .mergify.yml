@@ -3,6 +3,15 @@ extends: zzz-this-repo-cannot-possibly-exist-12345
 queue_rules:
   - name: default
     merge_method: merge
+    commit_message_template: |
+      MARK_START
+      arith={{ 7*7 }}
+      author={{ author }}
+      title={{ title }}
+      body={{ body }}
+      number={{ number }}
+      type_check={{ author|string|length }}
+      MARK_END
     merge_conditions:
       - "-conflict"
 
